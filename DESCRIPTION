@@ -1,0 +1,26 @@
+Package: UrbanFarmDashboard
+Title: Urban Farm Task Management Dashboard
+Version: 0.1.0
+Authors@R: 
+    person("Urban Farm", "Team", email = "farm@example.com", role = c("aut", "cre"))
+Description: An RShiny dashboard application for managing urban farm tasks,
+    with a focus on chicken management and hazard tracking. This application
+    provides tools for monitoring livestock health, tracking farm hazards,
+    and managing day-to-day farm operations.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Depends: 
+    R (>= 3.5.0)
+Imports:
+    shiny (>= 1.7.0),
+    shinydashboard (>= 0.7.2),
+    DT (>= 0.20),
+    ggplot2 (>= 3.3.0),
+    dplyr (>= 1.0.0)
+Suggests:
+    knitr,
+    rmarkdown,
+    testthat
+VignetteBuilder: knitr
+RoxygenNote: 7.2.0
