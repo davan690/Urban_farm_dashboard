@@ -1,0 +1,58 @@
+---
+title: "Quick Start Guide"
+output: html_document
+---
+
+# Quick Start Guide
+
+## Getting Started in 5 Minutes
+
+### 1. Install Required Packages
+
+```{r eval=FALSE}
+install.packages(c("shiny", "shinydashboard", "DT", "ggplot2", "dplyr"))
+```
+
+### 2. Run the Application
+
+```{r eval=FALSE}
+# Option 1: From R console
+shiny::runApp()
+
+# Option 2: From RStudio
+# Open app.R and click "Run App" button
+```
+
+### 3. Navigate the Dashboard
+
+- **Dashboard**: View overview statistics
+- **Chickens**: Manage your flock
+- **Hazards**: Track and report hazards
+- **About**: Learn more about the application
+
+## Key Features at a Glance
+
+### Managing Chickens
+
+1. Click "Chickens" in the sidebar
+2. Click "Add New Chicken" button
+3. Fill in chicken details
+4. Save and view in inventory table
+
+### Reporting Hazards
+
+1. Click "Hazards" in the sidebar
+2. Click "Report New Hazard" button
+3. Describe the hazard and set severity
+4. Submit to add to hazard log
+
+## Tips
+
+- Use the refresh button to reload data
+- Filter hazards by status and severity
+- Check visualizations for insights
+- Data is saved in CSV files in the `data/` folder
+
+## Next Steps
+
+For detailed information, see the complete documentation in `README.Rmd`.

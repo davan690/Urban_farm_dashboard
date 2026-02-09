@@ -1,0 +1,146 @@
+/* Custom CSS for Urban Farm Dashboard */
+
+/* Overall layout improvements */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header styling */
+.main-header .logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* Sidebar styling */
+.sidebar-menu > li.active > a {
+  border-left-color: #28a745;
+}
+
+/* Value boxes */
+.small-box {
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Box improvements */
+.box {
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+
+.box-header {
+  font-weight: 600;
+}
+
+/* Button styling */
+.btn {
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #212529;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+  border-color: #d39e00;
+}
+
+/* Table styling */
+.dataTables_wrapper {
+  padding: 10px;
+}
+
+table.dataTable thead th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+table.dataTable tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Modal improvements */
+.modal-header {
+  background-color: #28a745;
+  color: white;
+}
+
+.modal-title {
+  font-weight: 600;
+}
+
+/* Form inputs */
+.form-control:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+/* Dashboard specific */
+.info-box {
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: 10px;
+  }
+  
+  .box {
+    margin-bottom: 15px;
+  }
+}
+
+/* Custom colors for severity levels */
+.severity-low {
+  color: #28a745;
+}
+
+.severity-medium {
+  color: #ffc107;
+}
+
+.severity-high {
+  color: #fd7e14;
+}
+
+.severity-critical {
+  color: #dc3545;
+}
+
+/* Status badges */
+.status-active {
+  background-color: #dc3545;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.status-resolved {
+  background-color: #28a745;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.status-review {
+  background-color: #ffc107;
+  color: #212529;
+  padding: 3px 8px;
+  border-radius: 3px;
+}

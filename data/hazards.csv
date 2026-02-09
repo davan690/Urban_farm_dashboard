@@ -1,0 +1,6 @@
+id,type,description,severity,status,date_reported,date_resolved
+1,Predator Activity,Fox spotted near chicken coop at dawn,High,Active,2026-02-05,
+2,Facility Structure,Broken fence panel on west side,Medium,Under Review,2026-02-03,
+3,Equipment Failure,Automatic feeder malfunction,Low,Resolved,2026-01-28,2026-01-29
+4,Weather Related,Heavy rain causing flooding in outdoor area,Medium,Active,2026-02-07,
+5,Animal Health,One chicken showing signs of respiratory issues,High,Under Review,2026-02-06,
