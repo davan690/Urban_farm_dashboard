@@ -1,53 +1,88 @@
-# Documentation Index
+# 🌾 Urban Farm Dashboard
 
-Welcome to the Urban Farm Dashboard documentation. This index will help you find the information you need.
+**Interactive Shiny Application for Farm Management & KVC Student Risk Assessments**
 
-## Getting Started
+[![GitHub](https://img.shields.io/badge/GitHub-davan690%2FUrban_farm_dashboard-blue)](https://github.com/davan690/Urban_farm_dashboard)
+[![License](https://img.shields.io/badge/License-MIT-green)](../LICENSE)
+[![R Version](https://img.shields.io/badge/R-%3E%3D3.5.0-lightblue)](https://www.r-project.org/)
 
-- **[Quick Start Guide](quick_start.Rmd)** - Get up and running in 5 minutes
-- **[README (Comprehensive)](../README.Rmd)** - Complete user guide and documentation
-- **[README (Summary)](../README.md)** - Quick overview and project information
+---
 
-## For Users
+## 🚀 Quick Links
 
-### Basic Usage
-- [Quick Start Guide](quick_start.Rmd) - Installation and first steps
-- [README.Rmd](../README.Rmd) - Detailed feature documentation
-  - Dashboard Overview
-  - Managing Chickens
-  - Managing Hazards
-  - Troubleshooting
+### For Students
+- **[KVC Farm Risk Calculator](kvc-dashboard.html)** — Interactive risk assessment tool
+- **[Quick Start Guide](documentation/quick_start.md)** — Get running in 5 minutes
+- **[Data Schema](documentation/data_schema.md)** — Understand the data structure
 
-### Data Management
-- [Data Schema](data_schema.md) - Understanding the data structure
-  - Chickens data format
-  - Hazards data format
-  - Validation rules
-  - Backup procedures
+### For Teachers & Developers
+- **[Development Guide](documentation/development.md)** — Architecture & code style
+- **[Deployment Guide](documentation/deployment.md)** — Deploy to cloud
+- **[Google Sheets Setup](documentation/google_sheets_setup.md)** — Enable collaborative data
 
-## For Developers
+---
 
-### Development
-- [Development Guide](development.md) - Contributing to the project
-  - Project structure
-  - Code architecture
-  - Adding new features
-  - Testing procedures
-  - Best practices
+## ✨ Features
 
-### Deployment
-- [Deployment Guide](deployment.md) - Running in production
-  - Local development setup
-  - Deploying to shinyapps.io
-  - Shiny Server deployment
-  - Docker deployment
-  - Monitoring and maintenance
+### Phase 1: Farm Management
+- Chicken inventory & health tracking
+- Hazard logging & categorization
+- CSV data storage with visualization
 
-## Quick Reference
+### Phase 2: KVC Risk Assessment (NEW)
+- Job risk calculator with colour-coded hazards
+- Risk profile comparison (Teacher / AI / Historical / Live)
+- Crowdsourced student assessments
+- Offline-first with optional Google Sheets sync
 
-### File Structure
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- R ≥ 3.5.0
+- RStudio (recommended)
+
+### Quick Run
+```bash
+cd Urban_farm_dashboard
+Rscript run_app.R
 ```
-Urban_farm_dashboard/
+
+See [Quick Start Guide](documentation/quick_start.md) for more options.
+
+---
+
+## 📖 Documentation
+
+- **[Quick Start](documentation/quick_start.md)** — 5-minute setup
+- **[Data Schema](documentation/data_schema.md)** — CSV structure
+- **[Development](documentation/development.md)** — Code architecture
+- **[Deployment](documentation/deployment.md)** — Production setup
+- **[Google Sheets](documentation/google_sheets_setup.md)** — Live data sync
+
+---
+
+## 🌍 Deployment
+
+| Platform | Time | Cost |
+|----------|------|------|
+| Local | 5 min | Free |
+| shinyapps.io | 30 min | $39+/mo |
+| Docker | 20 min | Varies |
+| Shiny Server | 1 hr | ~$5/mo |
+
+See [Deployment Guide](documentation/deployment.md) for detailed steps.
+
+---
+
+## 📝 License
+
+MIT License — see [LICENSE](../LICENSE)
+
+---
+
+**Last Updated**: 2026-07-19 | [View on GitHub](https://github.com/davan690/Urban_farm_dashboard)
 ├── app.R                    # Main application
 ├── run_app.R               # Run script
 ├── DESCRIPTION             # Dependencies
