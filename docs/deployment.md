@@ -34,6 +34,23 @@ rsconnect::setAccountInfo(
 )
 ```
 
+### Google Sheets (Service Account)
+This app can read/write to Google Sheets using a service account. You will need:
+
+1. Create a Google Cloud project and enable the Google Sheets API.
+2. Create a service account and download the JSON key.
+3. Share the target Google Sheet with the service account email (edit access).
+4. Add these environment variables in shinyapps.io:
+
+```
+GSHEETS_SHEET_ID=<your-sheet-id>
+GSHEETS_CHICKENS_TAB=Chickens
+GSHEETS_HAZARDS_TAB=Hazards
+GSHEETS_SERVICE_JSON=<contents of the service account json>
+```
+
+Note: `GSHEETS_SERVICE_JSON` should be the raw JSON string. Keep it private.
+
 ### Deploy
 ```r
 # Deploy the application

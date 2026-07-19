@@ -1,6 +1,119 @@
 # Urban Farm Dashboard - Implementation Summary
 
-## Project Complete ✓
+## Phase 2 Complete ✓ — KVC Farm Risk Dashboard Integration
+
+---
+
+## Phase 2: Farm Risk Integration (2026-07-19)
+
+### What Was Added
+
+#### New Module — `modules/farm_risk_module.R`
+Full Shiny module porting the KVC Farm Risk Matrix HTML dashboard. Contains three sub-tabs:
+
+1. **Job Risk Calculator**  
+   - Select a farm zone (General Farm, Sheep Yards, Chicken Coop, Orchard, Garden Beds, Stream Work, Forest, Bees)  
+   - Check off tools needed for the job  
+   - Produces three value boxes: Area Max Hazard Score, Highest Tool Class, and Operational Status (STANDARD / HIGH / CRITICAL)  
+   - DT table of all environmental hazards in the selected zone with Likelihood × Impact scores, colour-coded green/amber/red  
+   - Per-tool operational controls rendered as labelled cards  
+
+2. **Compare Risk Profiles**  
+   - Select any tool from the registry  
+   - ggplot2 bar chart comparing Teacher Baseline / AI Engine / Last Semester / Live Class average  
+   - DT variance table with evaluation remarks  
+
+3. **Log Assessment (LIVE)**  
+   - Submission form: tool, risk slider (1–5), coordinate/landmark, justification text  
+   - Writes to Google Sheets (if `GSHEETS_SHEET_ID` is set) and **always** writes a local CSV backup  
+   - DT live feed table sorted newest-first, colour-coded by rating  
+
+#### New Helper Functions in `R/helpers.R`
+| Function | Description |
+|---|---|
+| `load_area_hazards()` | GSheets (`AreaHazards` tab) → `data/area_hazards.csv` fallback |
+| `load_tool_registry()` | GSheets (`ToolRegistry` tab) → `data/tool_registry.csv` fallback |
+| `load_risk_submissions()` | GSheets (`RiskSubmissions` tab) → `data/risk_submissions.csv` fallback |
+| `save_risk_submissions()` | Writes CSV first, then attempts GSheets write; swallows connection errors gracefully |
+| `ensure_*_columns()` | Column-presence guards for all three new tables |
+
+`get_gsheets_tabs()` now includes three additional environment variable overrides:  
+`GSHEETS_AREA_HAZARDS_TAB`, `GSHEETS_TOOL_REGISTRY_TAB`, `GSHEETS_RISK_SUBMISSIONS_TAB`
+
+#### New Backup CSV Files in `data/`
+| File | Purpose |
+|---|---|
+| `data/area_hazards.csv` | 18 hazard records across 8 farm zones |
+| `data/tool_registry.csv` | 19 tools with BaseRisk, Teacher/AI/Historical ratings, and controls |
+| `data/risk_submissions.csv` | Seed data (5 entries) + runtime write target for offline mode |
+
+#### Google Sheets Sheet Structure (add these tabs to your sheet)
+| Tab name | Columns |
+|---|---|
+| `AreaHazards` | Area, Hazard, Likelihood, Impact, Elimination, Mitigation |
+| `ToolRegistry` | Tool, BaseRisk, Teacher_Risk, AI_Risk, Hist_Risk, ToolControls |
+| `RiskSubmissions` | Tool, Vote, Coord, Comment, Timestamp |
+
+#### CSS — `www/custom.css`
+Added KVC-specific styles: active tab border highlight, risk colour helpers (`.risk-low`, `.risk-medium`, `.risk-high`), tool control card styling, and live-badge pulse animation.
+
+### Offline / Fallback Strategy
+1. `load_*` functions check `gsheets_enabled()` first  
+2. On any GSheets error the message is logged and the function falls through to the local CSV  
+3. `save_risk_submissions()` **always** writes CSV first, so no student submission is lost if the network drops mid-session  
+4. The app starts and runs fully without any environment variables set
+
+---
+
+## Phase 1: Original Dashboard (prior)
+
+A complete RShiny application for managing urban farm tasks has been successfully implemented with a focus on chicken management and hazard tracking.
+
+## What Was Created
+
+### 📁 Application Files (5 files)
+
+1. **app.R** (141 lines)
+   - Main application entry point
+   - Dashboard layout with shinydashboard
+   - Integration of all modules
+   - Value boxes for key metrics
+
+2. **run_app.R** (20 lines)
+   - Convenient script to run the application
+   - Automatic dependency checking
+   - Browser launch support
+
+3. **DESCRIPTION** (24 lines)
+   - Package metadata
+   - Dependency specifications
+   - Version information
+
+4. **Urban_farm_dashboard.Rproj** 
+   - RStudio project configuration
+   - Build settings
+
+5. **.gitignore** (updated)
+   - R-specific ignores
+   - Data backup exclusions
+   - Documentation handling
+
+### 📦 Modules (2 modules, 418 lines)
+
+1. **modules/chickens_module.R** (183 lines)
+   - UI and server for chicken management
+   - Add/view chicken inventory
+   - Health status tracking
+   - Data visualizations (health and breed distribution)
+   - Modal dialogs for data entry
+   - Input validation
+
+2. **modules/hazards_module.R** (235 lines)
+   - UI and server for hazard management
+   - Report/view hazard log
+   - Severity and status tracking
+   - Filtering capabilities
+
 
 A complete RShiny application for managing urban farm tasks has been successfully implemented with a focus on chicken management and hazard tracking.
 

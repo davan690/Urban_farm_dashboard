@@ -1,0 +1,20 @@
+Tool,BaseRisk,Teacher_Risk,AI_Risk,Hist_Risk,ToolControls
+Chainsaw,5,5,5,5,STRICT: Full teacher PPE. Student observation only.
+Scrub Bar,5,5,5,4,STRICT: Full harness mandatory. 15m safety circle.
+Angle Grinder,5,5,4,5,STRICT: Face shield required. Direct sparks away from hay.
+Possum Kill-Traps,4,4,4,3,STRICT: Safety setting tools only. Hands out of jaw zone.
+Shearing Hand-Piece,4,4,3,4,Official training sign-off required. Manage cord clear of stock.
+Ladders,4,4,4,3,3-point contact rule. Level stable ground placement.
+Power Drill,3,3,3,3,Select correct bits. Keep fingers clear of exit point.
+Drafting Gates,3,3,2,3,One-person one-gate rule. Watch hinge pinch points.
+Loppers & Saws,3,3,3,2,Maintain 2m safety circle. Watch for overhead falling debris.
+Gas Smoker,3,3,2,3,Extinguish completely before storage. Keep away from dry grass.
+Egg Wash Station,3,3,2,3,Electrical safety check in wet zone. Dilution PPE rules.
+Drenching Gun,2,2,2,1,Low-stress positioning. Clean/lubricate seals after use.
+Spade & Shovel,2,2,2,2,Use legs for lifting. Wear safety boots for foot protection.
+Garden Fork,2,2,2,2,Maintain tine awareness to avoid feet. Check for services.
+Wheelbarrow,2,2,2,1,Balance load centrally on slopes. Avoid overloading.
+Secateurs,2,2,2,2,Engage safety lock before passing. Sterilize blades.
+Electric Fence Tester,2,2,3,2,Use insulated handles. Do not touch wires directly.
+Water Sampling Kit,2,2,2,2,Handle glass components with care. Wear wader belt.
+Plate Meter,1,1,1,1,Secure plate during transport. Calibrate regularly.

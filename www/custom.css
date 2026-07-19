@@ -79,6 +79,53 @@ table.dataTable tbody tr:hover {
   color: white;
 }
 
+/* =========================================================
+   Farm Risk Dashboard — KVC styles
+   ========================================================= */
+
+/* Tabset tabs used in the Farm Risk module */
+.nav-tabs > li > a {
+  font-weight: 500;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover {
+  border-top: 3px solid #065f46;
+  color: #065f46;
+  font-weight: 700;
+}
+
+/* Risk score colour helpers */
+.risk-low    { background-color: #d1fae5; color: #065f46; font-weight: bold; }
+.risk-medium { background-color: #fef3c7; color: #78350f; font-weight: bold; }
+.risk-high   { background-color: #fee2e2; color: #7f1d1d; font-weight: bold; }
+
+/* Tool controls cards */
+.well {
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+/* Live feed DT table tweaks */
+#farm_risk-live_feed_table table.dataTable tbody tr:hover {
+  background-color: #f0fdf4;
+}
+
+/* "LIVE" badge pulse animation in the tab label */
+@keyframes kvc-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.55; }
+}
+.kvc-live-badge {
+  animation: kvc-pulse 2s infinite;
+}
+
+/* Comparison chart container */
+#farm_risk-comparison_chart {
+  border-radius: 6px;
+}
+
 .modal-title {
   font-weight: 600;
 }

@@ -40,7 +40,9 @@ install.packages(c(
   "shinydashboard", 
   "DT",
   "ggplot2",
-  "dplyr"
+  "dplyr",
+  "googlesheets4",
+  "gargle"
 ))
 ```
 
@@ -57,6 +59,19 @@ shiny::runApp()
 ```
 
 Alternatively, open the `app.R` file in RStudio and click the "Run App" button.
+
+### Google Sheets Configuration (Optional)
+
+To enable persistent storage in Google Sheets, set these environment variables:
+
+```
+GSHEETS_SHEET_ID=<your-sheet-id>
+GSHEETS_CHICKENS_TAB=Chickens
+GSHEETS_HAZARDS_TAB=Hazards
+GSHEETS_SERVICE_JSON=<service-account-json>
+```
+
+If not set, the app falls back to CSV files under `data/`.
 
 ## Application Structure
 

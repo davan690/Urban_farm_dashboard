@@ -1,0 +1,125 @@
+---
+title: "Google Sheets API Setup for Shiny Apps"
+author: "Urban Farm Team"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+---
+
+# Purpose
+
+This guide walks through creating a Google Cloud service account, enabling the Google Sheets API, and configuring a Shiny app deployed on shinyapps.io to read/write Google Sheets.
+
+# 1. Create a Google Cloud project
+
+1. Go to https://console.cloud.google.com/.
+2. Select the project dropdown (top left).
+3. Click **New Project**.
+4. Name it (for example: "Urban Farm Dashboard").
+5. Click **Create**.
+
+# 2. Enable the Google Sheets API
+
+1. In the left menu, go to **APIs & Services** > **Library**.
+2. Search for **Google Sheets API**.
+3. Open it and click **Enable**.
+
+# 3. Create a service account
+
+1. Go to **APIs & Services** > **Credentials**.
+2. Click **Create Credentials** > **Service account**.
+3. Name it (for example: "urban-farm-sheets").
+4. Click **Create and Continue**.
+5. You can skip assigning roles for now.
+6. Click **Done**.
+
+# 4. Create a JSON key
+
+1. In **Credentials**, find your new service account.
+2. Click the service account name.
+3. Go to the **Keys** tab.
+4. Click **Add Key** > **Create new key**.
+5. Choose **JSON** and download the file.
+6. Keep this JSON file private.
+
+# 5. Create the Google Sheet
+
+Create a Google Sheet with two tabs. The first row must be headers.
+
+## Chickens tab
+
+Headers:
+
+- id
+- name
+- breed
+- age_months
+- health_status
+- last_check
+
+## Hazards tab
+
+Headers:
+
+- id
+- type
+- description
+- severity
+- status
+- date_reported
+- date_resolved
+
+# 6. Share the sheet with the service account
+
+1. Open the Google Sheet.
+2. Click **Share**.
+3. Add the service account email (from Google Cloud Console).
+4. Give it **Editor** access.
+
+# 7. Get the Sheet ID
+
+The Sheet ID is in the URL:
+
+```
+https://docs.google.com/spreadsheets/d/SHEET_ID_HERE/edit
+```
+
+# 8. Configure shinyapps.io environment variables
+
+In shinyapps.io:
+
+1. Open your app dashboard.
+2. Go to **Settings** > **Environment Variables**.
+3. Add the following variables:
+
+```
+GSHEETS_SHEET_ID=<your-sheet-id>
+GSHEETS_CHICKENS_TAB=Chickens
+GSHEETS_HAZARDS_TAB=Hazards
+GSHEETS_SERVICE_JSON=<service-account-json>
+```
+
+Notes:
+- `GSHEETS_SERVICE_JSON` is the full contents of the JSON key file.
+- Do not add quotes around the JSON.
+
+# 9. Local test (optional)
+
+To test locally before deployment, you can set the same variables in your R session:
+
+```r
+Sys.setenv(
+  GSHEETS_SHEET_ID = "<your-sheet-id>",
+  GSHEETS_CHICKENS_TAB = "Chickens",
+  GSHEETS_HAZARDS_TAB = "Hazards",
+  GSHEETS_SERVICE_JSON = "<service-account-json>"
+)
+
+shiny::runApp()
+```
+
+# 10. Deploy to shinyapps.io
+
+Once the variables are set, deploy your app as usual with `rsconnect::deployApp()`. The app will read/write directly to Google Sheets.

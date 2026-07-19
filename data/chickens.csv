@@ -1,6 +1,7 @@
-id,name,breed,age_months,health_status,last_check
-1,Henrietta,Rhode Island Red,18,Healthy,2026-02-01
-2,Beatrice,Plymouth Rock,24,Healthy,2026-02-05
-3,Ginger,Sussex,12,Under Observation,2026-02-07
-4,Penny,Leghorn,36,Healthy,2026-01-30
-5,Rosie,Wyandotte,20,Recovering,2026-02-06
+"id","name","breed","age_months","health_status","last_check"
+1,"Henrietta","Rhode Island Red",18,"Healthy","2026-02-01"
+2,"Beatrice","Plymouth Rock",24,"Healthy","2026-02-05"
+3,"Ginger","Sussex",12,"Under Observation","2026-02-07"
+4,"Penny","Leghorn",36,"Healthy","2026-01-30"
+5,"Rosie","Wyandotte",20,"Recovering","2026-02-06"
+6,"Rocky","Species unknown",2,"Recovering","2026-07-01"

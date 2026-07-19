@@ -7,7 +7,7 @@ An RShiny application for managing urban farm tasks with a focus on chicken mana
 - 🐔 **Chicken Management**: Track chicken inventory, health status, and breed information
 - ⚠️ **Hazard Management**: Report and monitor farm hazards with severity levels
 - 📊 **Data Visualization**: Interactive charts and graphs for insights
-- 💾 **Data Persistence**: CSV-based storage for easy data management
+- 💾 **Data Persistence**: Google Sheets or CSV-based storage
 - 📱 **Responsive Design**: Works on desktop and mobile devices
 
 ## Quick Start
@@ -18,7 +18,7 @@ An RShiny application for managing urban farm tasks with a focus on chicken mana
 2. Install required packages:
 
 ```r
-install.packages(c("shiny", "shinydashboard", "DT", "ggplot2", "dplyr"))
+install.packages(c("shiny", "shinydashboard", "DT", "ggplot2", "dplyr", "googlesheets4", "gargle"))
 ```
 
 ### Running the App
@@ -29,6 +29,19 @@ shiny::runApp()
 
 # Or open app.R in RStudio and click "Run App"
 ```
+
+### Google Sheets Configuration (Optional)
+
+To enable persistent storage in Google Sheets, set these environment variables:
+
+```
+GSHEETS_SHEET_ID=<your-sheet-id>
+GSHEETS_CHICKENS_TAB=Chickens
+GSHEETS_HAZARDS_TAB=Hazards
+GSHEETS_SERVICE_JSON=<service-account-json>
+```
+
+If not set, the app falls back to CSV files under `data/`.
 
 ## Project Structure
 

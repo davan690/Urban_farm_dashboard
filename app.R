@@ -13,8 +13,9 @@ library(dplyr)
 source("R/helpers.R", local = TRUE)
 
 # Source modules
-source("modules/chickens_module.R", local = TRUE)
-source("modules/hazards_module.R", local = TRUE)
+source("modules/chickens_module.R",   local = TRUE)
+source("modules/hazards_module.R",    local = TRUE)
+source("modules/farm_risk_module.R",  local = TRUE)
 
 # Define UI
 ui <- dashboardPage(
@@ -30,6 +31,7 @@ ui <- dashboardPage(
       menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard")),
       menuItem("Chickens", tabName = "chickens", icon = icon("drumstick-bite")),
       menuItem("Hazards", tabName = "hazards", icon = icon("exclamation-triangle")),
+      menuItem("Farm Risk", tabName = "farm_risk", icon = icon("shield-alt")),
       menuItem("About", tabName = "about", icon = icon("info-circle"))
     )
   ),
@@ -74,6 +76,12 @@ ui <- dashboardPage(
         hazardsUI("hazards")
       ),
       
+      # Farm Risk tab
+      tabItem(
+        tabName = "farm_risk",
+        farmRiskUI("farm_risk")
+      ),
+
       # About tab
       tabItem(
         tabName = "about",
@@ -135,6 +143,7 @@ server <- function(input, output, session) {
   # Call module servers
   chickensServer("chickens")
   hazardsServer("hazards")
+  farmRiskServer("farm_risk")
 }
 
 # Run the application
