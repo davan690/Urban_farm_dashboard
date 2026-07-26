@@ -50,6 +50,7 @@ Urban_farm_dashboard/
 ├── app.R                    # Main application file
 ├── DESCRIPTION             # Package dependencies
 ├── README.Rmd              # Comprehensive documentation
+├── documentation/          # Source documentation files (editable)
 ├── R/
 │   └── helpers.R           # Helper functions
 ├── modules/
@@ -59,7 +60,9 @@ Urban_farm_dashboard/
 │   ├── chickens.csv        # Chicken inventory data
 │   └── hazards.csv         # Hazard log data
 ├── docs/
-│   └── quick_start.Rmd     # Quick start guide
+│   ├── README.md           # Publication index (GitHub-facing)
+│   ├── documentation/      # Rendered documentation output
+│   └── kvc-dashboard.html  # Published static dashboard asset
 └── www/
     └── custom.css          # Custom styling
 ```
@@ -68,7 +71,18 @@ Urban_farm_dashboard/
 
 For detailed documentation, please see:
 - [README.Rmd](README.Rmd) - Complete user guide
-- [docs/quick_start.Rmd](docs/quick_start.Rmd) - Quick start guide
+- [documentation/](documentation/) - Source documentation (project docs)
+- [docs/README.md](docs/README.md) - Published documentation index
+
+## Appendix: Documentation Source and Publishing
+
+- Documentation source files are maintained in [documentation/](documentation/)
+- Published content is rendered to [docs/](docs/) for GitHub publication
+- To republish after editing docs, run:
+
+```r
+source("scripts/publish_docs.R")
+```
 
 ## Usage
 

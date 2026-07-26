@@ -300,6 +300,19 @@ For questions or issues:
 - Contact the farm management team
 - Check documentation in `README.Rmd`
 
+## Appendix: Documentation Source and Publishing
+
+Documentation is managed in two layers:
+
+1. **Source documentation** (editable project docs): `documentation/`
+2. **Published documentation** (GitHub-facing output): `docs/`
+
+After editing docs in `documentation/`, republish to `docs/` by running:
+
+```{r publish-docs, eval=FALSE}
+source("scripts/publish_docs.R")
+```
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.

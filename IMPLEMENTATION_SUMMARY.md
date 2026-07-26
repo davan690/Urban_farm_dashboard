@@ -215,26 +215,26 @@ A complete RShiny application for managing urban farm tasks has been successfull
    - Troubleshooting section
    - Future enhancements
 
-3. **docs/quick_start.Rmd** (1212 characters)
+3. **documentation/quick_start.Rmd** (1212 characters)
    - 5-minute getting started guide
    - Key features overview
    - Quick tips
 
-4. **docs/data_schema.md** (6274 characters)
+4. **documentation/data_schema.md** (6274 characters)
    - Complete data schema documentation
    - Field descriptions and valid values
    - Validation rules
    - Sample data examples
    - Data management best practices
 
-5. **docs/development.md** (5071 characters)
+5. **documentation/development.md** (5071 characters)
    - Project architecture
    - Adding new features guide
    - Code style guidelines
    - Testing procedures
    - Debugging tips
 
-6. **docs/deployment.md** (3331 characters)
+6. **documentation/deployment.md** (3331 characters)
    - Local development setup
    - shinyapps.io deployment
    - Shiny Server deployment
@@ -363,11 +363,11 @@ The modular architecture makes it easy to add:
 
 ## Support Resources
 
-- **Quick Start**: docs/quick_start.Rmd
+- **Quick Start**: documentation/quick_start.Rmd
 - **User Guide**: README.Rmd
-- **Development**: docs/development.md
-- **Deployment**: docs/deployment.md
-- **Data Schema**: docs/data_schema.md
+- **Development**: documentation/development.md
+- **Deployment**: documentation/deployment.md
+- **Data Schema**: documentation/data_schema.md
 
 ## Quality Assurance
 

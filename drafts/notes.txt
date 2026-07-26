@@ -1,0 +1,40 @@
+# Notes 
+
+Ajax for data
+
+Jquery check :)
+
+### json data move to sheets and access with Ajax
+
+
+    // Master Tool Registry with baseline profiles
+    const toolRegistry = [
+      { Tool: "Chainsaw", BaseRisk: 5, Teacher_Risk: 5, AI_Risk: 5, Hist_Risk: 5, ToolControls: "STRICT: Full teacher PPE. Student observation only." },
+      { Tool: "Scrub Bar", BaseRisk: 5, Teacher_Risk: 5, AI_Risk: 5, Hist_Risk: 4, ToolControls: "STRICT: Full harness mandatory. 15m safety circle." },
+      { Tool: "Angle Grinder", BaseRisk: 5, Teacher_Risk: 5, AI_Risk: 4, Hist_Risk: 5, ToolControls: "STRICT: Face shield required. Direct sparks away from hay." },
+      { Tool: "Possum Kill-Traps", BaseRisk: 4, Teacher_Risk: 4, AI_Risk: 4, Hist_Risk: 3, ToolControls: "STRICT: Safety setting tools only. Hands out of jaw zone." },
+      { Tool: "Shearing Hand-Piece", BaseRisk: 4, Teacher_Risk: 4, AI_Risk: 3, Hist_Risk: 4, ToolControls: "Official training sign-off required. Manage cord clear of stock." },
+      { Tool: "Ladders", BaseRisk: 4, Teacher_Risk: 4, AI_Risk: 4, Hist_Risk: 3, ToolControls: "3-point contact rule. Level, stable ground placement." },
+      { Tool: "Power Drill", BaseRisk: 3, Teacher_Risk: 3, AI_Risk: 3, Hist_Risk: 3, ToolControls: "Select correct bits. Keep fingers clear of exit point." },
+      { Tool: "Drafting Gates", BaseRisk: 3, Teacher_Risk: 3, AI_Risk: 2, Hist_Risk: 3, ToolControls: "One-person, one-gate rule. Watch hinge pinch points." },
+      { Tool: "Loppers & Saws", BaseRisk: 3, Teacher_Risk: 3, AI_Risk: 3, Hist_Risk: 2, ToolControls: "Maintain 2m safety circle. Watch for overhead falling debris." },
+      { Tool: "Gas Smoker", BaseRisk: 3, Teacher_Risk: 3, AI_Risk: 2, Hist_Risk: 3, ToolControls: "Extinguish completely before storage. Keep away from dry grass." },
+      { Tool: "Egg Wash Station", BaseRisk: 3, Teacher_Risk: 3, AI_Risk: 2, Hist_Risk: 3, ToolControls: "Electrical safety check in wet zone. Dilution PPE rules." },
+      { Tool: "Drenching Gun", BaseRisk: 2, Teacher_Risk: 2, AI_Risk: 2, Hist_Risk: 1, ToolControls: "Low-stress positioning. Clean/lubricate seals after use." },
+      { Tool: "Spade & Shovel", BaseRisk: 2, Teacher_Risk: 2, AI_Risk: 2, Hist_Risk: 2, ToolControls: "Use legs for lifting. Wear safety boots for foot protection." },
+      { Tool: "Garden Fork", BaseRisk: 2, Teacher_Risk: 2, AI_Risk: 2, Hist_Risk: 2, ToolControls: "Maintain tine awareness to avoid feet. Check for services." },
+      { Tool: "Wheelbarrow", BaseRisk: 2, Teacher_Risk: 2, AI_Risk: 2, Hist_Risk: 1, ToolControls: "Balance load centrally on slopes. Avoid overloading." },
+      { Tool: "Secateurs", BaseRisk: 2, Teacher_Risk: 2, AI_Risk: 2, Hist_Risk: 2, ToolControls: "Engage safety lock before passing. Sterilize blades." },
+      { Tool: "Electric Fence Tester", BaseRisk: 2, Teacher_Risk: 2, AI_Risk: 3, Hist_Risk: 2, ToolControls: "Use insulated handles. Do not touch wires directly." },
+      { Tool: "Water Sampling Kit", BaseRisk: 2, Teacher_Risk: 2, AI_Risk: 2, Hist_Risk: 2, ToolControls: "Handle glass components with care. Wear wader belt." },
+      { Tool: "Plate Meter", BaseRisk: 1, Teacher_Risk: 1, AI_Risk: 1, Hist_Risk: 1, ToolControls: "Secure plate during transport. Calibrate regularly." }
+    ];
+
+    // Seed/Initial Dataset for Crowdsourced Dynamic Entries
+    let studentSubmissions = [
+      { Tool: "Chainsaw", Vote: 5, Coord: "KVC-Forest-North", Comment: "Super heavy risk level. We must completely avoid using this tool without teacher's direct trigger handler." },
+      { Tool: "Plate Meter", Vote: 1, Coord: "KVC-Paddock-2", Comment: "Very safe. Only risks are walking trips but the tool itself poses near zero risk." },
+      { Tool: "Drenching Gun", Vote: 2, Coord: "KVC-SheepYards-1", Comment: "Needle puncture is possible but minimal if animal is secured properly." },
+      { Tool: "Secateurs", Vote: 3, Coord: "KVC-Orchard-East", Comment: "Can cut fingers easily if distracted. Important to keep safety lock locked when not pruning." },
+      { Tool: "Ladders", Vote: 4, Coord: "KVC-Orchard-West", Comment: "Steep slopes on KVC mean ladders can slip incredibly easily if spotter is absent." }
+    ];
